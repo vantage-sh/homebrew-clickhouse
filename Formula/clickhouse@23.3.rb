@@ -15,7 +15,7 @@ class ClickhouseAT233 < Formula
 
   bottle do
     root_url "https://github.com/vantage-sh/homebrew-clickhouse/releases/download/v23.3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "207b0fc7d3559c69c3047d496d132bfc869016a17afa319716f62a011352f95f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4d1dd9655af0dcd0969c8bf62ffbe4326fc03fdbca07b246afa8a9c227455b1"
   end
 
   depends_on "cmake" => :build
