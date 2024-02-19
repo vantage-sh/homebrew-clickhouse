@@ -1,20 +1,30 @@
 class ClickhouseAT2312 < Formula
   desc "Free analytics DBMS for big data with SQL interface"
   homepage "https://clickhouse.com"
-  license "Apache-2.0"
-
-  sha256 "30bcae2490fb5d9cdfd52ba9b25c4ad12efacc8882a6676a6a994e651c5aedee"
-  url "https://github.com/ClickHouse/ClickHouse/releases/download/v23.12.2.59-stable/clickhouse-macos-aarch64",
+  url "https://github.com/ClickHouse/ClickHouse/releases/download/v23.12.4.15-stable/clickhouse-macos-aarch64",
       verified: "github.com/ClickHouse/ClickHouse/"
+  sha256 "4770192072bce7afdbc49f33e90e04154b360de94d0307fdff432996b5474bcb"
+  license "Apache-2.0"
 
   livecheck do
     url :url
     regex(/^v?(\d+(?:\.\d+)+[._-](lts|stable))$/i)
   end
-    
+
   def install
-    system "chmod +x ./clickhouse-macos-aarch64"
-    system "./clickhouse-macos-aarch64", "install", "--prefix", HOMEBREW_PREFIX, "--binary-path", prefix/"bin", "--user", "", "--group", ""
+    chmod "+x", "./clickhouse-macos-aarch64"
+    system(
+      "./clickhouse-macos-aarch64",
+      "install",
+      "--prefix",
+      HOMEBREW_PREFIX,
+      "--binary-path",
+      prefix/"bin",
+      "--user",
+      "",
+      "--group",
+      "",
+    )
 
     # Relax the permissions when packaging.
     Dir.glob([
