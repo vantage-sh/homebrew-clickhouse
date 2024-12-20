@@ -1,4 +1,4 @@
-class ClickhouseAT243 < Formula
+class ClickhouseAT2412 < Formula
   desc "Free analytics DBMS for big data with SQL interface"
   homepage "https://clickhouse.com"
   url "https://github.com/ClickHouse/ClickHouse/releases/download/v24.12.1.1614-stable/clickhouse-macos-aarch64",
