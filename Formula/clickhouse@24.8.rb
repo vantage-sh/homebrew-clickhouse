@@ -51,6 +51,17 @@ class ClickhouseAT248 < Formula
       chmod "ug+x", file if File.directory?(file)
     end
 
+    # Enable beta features.
+    (etc/"clickhouse-server/users.d/default.xml").write <<~XML
+      <clickhouse>
+        <profiles>
+          <default>
+            <allow_experimental_json_type>1</allow_experimental_json_type>
+          </default>
+        </profiles>
+      </clickhouse>
+    XML
+
     # Make sure the data directories are initialized.
     system opt_bin/"clickhouse", "start", "--prefix", HOMEBREW_PREFIX, "--binary-path", opt_bin, "--user", ""
     system opt_bin/"clickhouse", "stop", "--prefix", HOMEBREW_PREFIX
