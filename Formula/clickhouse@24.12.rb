@@ -1,9 +1,9 @@
 class ClickhouseAT2412 < Formula
   desc "Free analytics DBMS for big data with SQL interface"
   homepage "https://clickhouse.com"
-  url "https://github.com/ClickHouse/ClickHouse/releases/download/v24.12.1.1614-stable/clickhouse-macos-aarch64",
+  url "https://github.com/ClickHouse/ClickHouse/releases/download/v24.12.6.70-stable/clickhouse-macos-aarch64",
       verified: "github.com/ClickHouse/ClickHouse/"
-  sha256 "e125c7bd46ebdc664882b264441261843449a9bf10d301c8f1741610c3b60320"
+  sha256 "bad93b6b29231bf4542e537ccfd3385050daeef8bcc6bd6f172cc5d516f75c11"
   license "Apache-2.0"
 
   livecheck do
