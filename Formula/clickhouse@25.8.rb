@@ -6,12 +6,12 @@ class ClickhouseAT258 < Formula
   sha256 "e7c3ed9f2589decc7db7e59e1bc7946c2868899e16ce61be528c496fa7fbe7cb"
   license "Apache-2.0"
 
-  keg_only :versioned_formula
-
   livecheck do
     url :url
     regex(/^v?(\d+(?:\.\d+)+[._-](lts|stable))$/i)
   end
+
+  keg_only :versioned_formula
 
   def install
     chmod "+x", "./clickhouse-macos-aarch64"

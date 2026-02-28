@@ -21,7 +21,7 @@ class ClickhouseCpp < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "abseil"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "gcc"
@@ -37,7 +37,7 @@ class ClickhouseCpp < Formula
     cmake_args << "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
 
     cmake_args << "-DWITH_OPENSSL=ON"
-    cmake_args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}"
+    cmake_args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}"
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args
     system "cmake", "--build", "build"
