@@ -25,7 +25,7 @@ class ClickhouseOdbc < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_macos do
     depends_on "libiodbc"
@@ -45,7 +45,7 @@ class ClickhouseOdbc < Formula
     cmake_args.reject! { |x| x.start_with?("-DCMAKE_BUILD_TYPE=") }
     cmake_args << "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
 
-    cmake_args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}"
+    cmake_args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}"
     cmake_args << "-DICU_ROOT=#{Formula["icu4c"].opt_prefix}"
 
     if OS.mac?

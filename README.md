@@ -7,12 +7,25 @@ clickhouse                       - alias, same as clickhouse@stable
 clickhouse-client                - alias, same as clickhouse@stable
 clickhouse-server                - alias, same as clickhouse@stable
 
-clickhouse@stable                - alias, always points to the latest stable versioned formula (clickhouse@23.2)
-clickhouse@lts                   - alias, always points to the latest LTS versioned formula (clickhouse@22.3)
+clickhouse@stable                - alias, always points to the latest stable versioned formula (clickhouse@26.2)
+clickhouse@lts                   - alias, always points to the latest LTS versioned formula (clickhouse@25.8)
 clickhouse@altinity-stable       - alias, always points to the latest Altinity-stable versioned formula (clickhouse@22.3-altinity-stable)
 
-clickhouse@23.2                  - 
-clickhouse@22.7                  - the latest release, version: 22.7.2.15-stable
+clickhouse@26.2                  - the latest release, version: 26.2.1.1139-stable
+clickhouse@26.1                  - keg-only, version: 26.1.3.52-stable
+clickhouse@25.12                 - keg-only, version: 25.12.7.21-stable
+clickhouse@25.11                 - keg-only, version: 25.11.9.34-stable
+clickhouse@25.10                 - keg-only, version: 25.10.6.36-stable
+clickhouse@25.8                  - keg-only, version: 25.8.8.26-lts (LTS)
+clickhouse@25.6                  - keg-only, version: 25.6.8.10-stable
+clickhouse@25.4                  - keg-only, version: 25.4.12.9-stable
+clickhouse@24.12                 - keg-only, version: 24.12.1.1614-stable
+clickhouse@24.8                  - keg-only, version: 24.8.12.28-lts
+clickhouse@24.3                  - keg-only, version: 24.3.3.102-lts
+clickhouse@23.12                 - keg-only, version: 23.12.6.19-stable
+clickhouse@23.3                  - keg-only, version: 23.3.22.3-lts
+clickhouse@23.2                  - keg-only
+clickhouse@22.7                  - keg-only, version: 22.7.2.15-stable
 clickhouse@22.6                  - keg-only, version: 22.6.4.35-stable
 clickhouse@22.5                  - keg-only, version: 22.5.3.21-stable
 clickhouse@22.4                  - keg-only, version: 22.4.6.53-stable
