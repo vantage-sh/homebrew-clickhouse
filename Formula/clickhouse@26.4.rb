@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-# ClickHouse 26.2 stable release.
-class ClickhouseAT262 < Formula
+# ClickHouse 26.4 stable release.
+class ClickhouseAT264 < Formula
   desc "Free analytics DBMS for big data with SQL interface"
   homepage "https://clickhouse.com"
-  url "https://github.com/ClickHouse/ClickHouse/releases/download/v26.2.1.1139-stable/clickhouse-macos-aarch64",
+  url "https://github.com/ClickHouse/ClickHouse/releases/download/v26.4.5.143-stable/clickhouse-macos-aarch64",
       verified: "github.com/ClickHouse/ClickHouse/"
-  version "26.2.1.1139"
-  sha256 "d30c678c180c5c0435694544de6127681336cdb0369ece9ed6cd0a9e36ffc106"
+  version "26.4.5.143"
+  sha256 "4e0024bafccc8cf4c6478e6b54182ae55bfaf918e35f9b0fbd48f5c14dc6347c"
   license "Apache-2.0"
 
   livecheck do
