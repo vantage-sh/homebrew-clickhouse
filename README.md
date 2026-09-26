@@ -3,43 +3,21 @@
 ## Available formulae
 
 ```text
-clickhouse                       - alias, same as clickhouse@stable
-clickhouse-client                - alias, same as clickhouse@stable
-clickhouse-server                - alias, same as clickhouse@stable
+clickhouse                       - alias, same as clickhouse@lts
+clickhouse-client                - alias, same as clickhouse@lts
+clickhouse-server                - alias, same as clickhouse@lts
 
-clickhouse@stable                - alias, always points to the latest stable versioned formula (clickhouse@26.2)
-clickhouse@lts                   - alias, always points to the latest LTS versioned formula (clickhouse@25.8)
-clickhouse@altinity-stable       - alias, always points to the latest Altinity-stable versioned formula (clickhouse@22.3-altinity-stable)
+clickhouse@lts                   - alias, always points to the latest LTS versioned formula (clickhouse@26.8)
 
-clickhouse@26.2                  - the latest release, version: 26.2.1.1139-stable
+clickhouse@26.8                  - the latest release / LTS, version: 26.8.12.53-lts
+clickhouse@26.2                  - keg-only, version: 26.2.1.1139-stable
 clickhouse@26.1                  - keg-only, version: 26.1.3.52-stable
 clickhouse@25.12                 - keg-only, version: 25.12.7.21-stable
 clickhouse@25.11                 - keg-only, version: 25.11.9.34-stable
 clickhouse@25.10                 - keg-only, version: 25.10.6.36-stable
-clickhouse@25.8                  - keg-only, version: 25.8.8.26-lts (LTS)
+clickhouse@25.8                  - keg-only, version: 25.8.8.26-lts
 clickhouse@25.6                  - keg-only, version: 25.6.8.10-stable
 clickhouse@25.4                  - keg-only, version: 25.4.12.9-stable
-clickhouse@24.12                 - keg-only, version: 24.12.1.1614-stable
-clickhouse@24.8                  - keg-only, version: 24.8.12.28-lts
-clickhouse@24.3                  - keg-only, version: 24.3.3.102-lts
-clickhouse@23.12                 - keg-only, version: 23.12.6.19-stable
-clickhouse@23.3                  - keg-only, version: 23.3.22.3-lts
-clickhouse@23.2                  - keg-only
-clickhouse@22.7                  - keg-only, version: 22.7.2.15-stable
-clickhouse@22.6                  - keg-only, version: 22.6.4.35-stable
-clickhouse@22.5                  - keg-only, version: 22.5.3.21-stable
-clickhouse@22.4                  - keg-only, version: 22.4.6.53-stable
-clickhouse@22.3                  - keg-only, version: 22.3.9.19-lts
-clickhouse@22.2                  - keg-only, version: 22.2.3.5-stable
-clickhouse@22.1                  - keg-only, version: 22.1.4.30-stable
-clickhouse@21.12                 - keg-only, version: 21.12.4.1-stable
-clickhouse@21.11                 - keg-only, version: 21.11.11.1-stable
-
-clickhouse@22.3-altinity-stable  - keg-only, the latest Altinity-stable release, version: 22.3.8.40-altinitystable
-clickhouse@21.8-altinity-stable  - keg-only, Altinity-stable release, version: 21.8.15.15-altinitystable
-
-clickhouse-odbc                  - recommended variant, version: 1.1.10.20210822
-clickhouse-cpp                   - recommended variant, version: 2.2.1
 ```
 
 ## Quick start: one-liner
@@ -61,7 +39,7 @@ Then, install the formula you need:
 ```sh
 brew install clickhouse
 # ..or
-brew install clickhouse@21.11
+brew install clickhouse@25.4
 # ...and so on.
 ```
 
@@ -76,7 +54,7 @@ Do not use `sudo`, ever. Do not start the ClickHouse server manually, instead us
 ```sh
 brew services start clickhouse
 # ..or
-brew services start clickhouse@21.11
+brew services start clickhouse@25.4
 # ...and so on.
 ```
 
@@ -104,16 +82,7 @@ $(brew --prefix clickhouse)/bin/clickhouse server --config-file $(brew --prefix)
 All except the latest versioned ClickHouse formulae are configured as [keg-only](https://docs.brew.sh/FAQ#what-does-keg-only-mean), so in order to refer to an executable from such formula you have to provide the full path to it, e.g.:
 
 ```sh
-$(brew --prefix clickhouse@21.11)/bin/clickhouse client
-```
-
-## Other formulae
-
-This tap also contains its own versions of `clickhouse-odbc` and `clikchouse-cpp` formulae, and in order to install these versions (which we recommend over the default ones), you have to provide the full names to avoid ambiguity, since the default Homebrew registry contains those too:
-
-```sh
-brew install altinity/clickhouse/clickhouse-odbc
-brew install altinity/clickhouse/clickhouse-cpp
+$(brew --prefix clickhouse@25.4)/bin/clickhouse client
 ```
 
 ## Pre-built binary packages (bottles)
@@ -143,7 +112,7 @@ You can also build the latest version (`HEAD`) of the sources for a formula:
 brew install --HEAD --verbose clickhouse
 ```
 
-The above command will check out the tip of the branch that corresponds to that specific version (e.g., branch [21.11](https://github.com/ClickHouse/ClickHouse/tree/21.11) for `clickhouse@21.11` and so on) and build it from sources.
+The above command will check out the tip of the branch that corresponds to that specific version (e.g., branch [25.4](https://github.com/ClickHouse/ClickHouse/tree/25.4) for `clickhouse@25.4` and so on) and build it from sources.
 
 ## Homebrew on Linux (Linuxbrew)
 
@@ -157,7 +126,4 @@ Refer to [Maintenance](MAINTENANCE.md) for instructions.
 
 - [Altinity](https://altinity.com/)
 - [ClickHouse](https://clickhouse.com/)
-- [ClickHouse C++ client library](https://github.com/ClickHouse/clickhouse-cpp)
-- [ClickHouse ODBC driver](https://github.com/ClickHouse/clickhouse-odbc)
-- [ClickHouse Tableau connector](https://github.com/Altinity/clickhouse-tableau-connector-odbc)
 - [Homebrew](https://brew.sh)

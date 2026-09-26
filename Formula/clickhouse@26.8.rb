@@ -1,70 +1,30 @@
-class ClickhouseAT2112 < Formula
+class ClickhouseAT268 < Formula
   desc "Free analytics DBMS for big data with SQL interface"
   homepage "https://clickhouse.com"
-  url "https://github.com/ClickHouse/ClickHouse.git",
-    tag:      "v21.12.4.1-stable",
-    revision: "fc0f05d972ece1099387fac2be76da45566c4d23"
+  url "https://github.com/ClickHouse/ClickHouse/releases/download/v26.8.12.53-lts/clickhouse-macos-aarch64",
+      verified: "github.com/ClickHouse/ClickHouse/"
+  sha256 "e848f9a32c81d1c651a454d674183ed46a0b1aa69e836bde9d4f9952d9a9b01a"
   license "Apache-2.0"
-  head "https://github.com/ClickHouse/ClickHouse.git",
-    branch:   "21.12"
 
   livecheck do
-    url :stable
-    regex(/^v?(21\.12(?:\.\d+)+)-(?:stable|lts)$/i)
-  end
-
-  bottle do
-    root_url "https://github.com/Altinity/homebrew-clickhouse/releases/download/clickhouse@21.12-21.12.4.1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30ad45158a8c3318cae3c9c7885a1e34a03ef29fecf45914c2f85578c73e67e9"
-    sha256                               monterey:       "6207adc52a64fb07a33c6b1ca4eef1bc7fc36cfb93f703177ede7a8670a6b6d0"
-  end
-
-  keg_only :versioned_formula
-
-  depends_on "cmake" => :build
-  depends_on "gawk" => :build
-  depends_on "gettext" => :build
-  depends_on "git-lfs" => :build
-  depends_on "libtool" => :build
-  depends_on "ninja" => :build
-  depends_on "perl" => :build
-  depends_on "python@3.9" => :build
-
-  on_macos do
-    depends_on "llvm" => :build
-  end
-
-  on_linux do
-    depends_on "llvm"
+    url :url
+    regex(/^v?(\d+(?:\.\d+)+[._-](lts|stable))$/i)
   end
 
   def install
-    cmake_args = std_cmake_args.dup
-
-    # It is crucial that CMake config scripts see RelWithDebInfo as a build type,
-    # since the code is only handling it (and Debug) properly.
-    # It is OK if Homebrew infrastructure filters out the debug info-related flags later.
-    cmake_args.reject! { |x| x.start_with?("-DCMAKE_BUILD_TYPE=") }
-    cmake_args << "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-
-    # Vanilla Clang is the only officially supported compiler.
-    cmake_args << "-DCMAKE_C_COMPILER=#{Formula["llvm"].bin}/clang"
-    cmake_args << "-DCMAKE_CXX_COMPILER=#{Formula["llvm"].bin}/clang++"
-    cmake_args << "-DCMAKE_AR=#{Formula["llvm"].bin}/llvm-ar"
-    cmake_args << "-DCMAKE_RANLIB=#{Formula["llvm"].bin}/llvm-ranlib"
-    cmake_args << "-DOBJCOPY_PATH=#{Formula["llvm"].bin}/llvm-objcopy"
-
-    # Disable more stuff that is irrelevant for production builds.
-    cmake_args << "-DENABLE_CCACHE=OFF"
-    cmake_args << "-DSANITIZE=OFF"
-    cmake_args << "-DENABLE_TESTS=OFF"
-    cmake_args << "-DENABLE_CLICKHOUSE_TEST=OFF"
-
-    system "cmake", "-S", ".", "-B", "./build", "-G", "Ninja", *cmake_args
-    system "cmake", "--build", "./build", "--config", "RelWithDebInfo", "--target", "clickhouse", "--parallel"
-
-    system "./build/programs/clickhouse", "install", "--prefix", HOMEBREW_PREFIX, "--binary-path", prefix/"bin",
-      "--user", "", "--group", ""
+    chmod "+x", "./clickhouse-macos-aarch64"
+    system(
+      "./clickhouse-macos-aarch64",
+      "install",
+      "--prefix",
+      HOMEBREW_PREFIX,
+      "--binary-path",
+      prefix/"bin",
+      "--user",
+      "",
+      "--group",
+      "",
+    )
 
     # Relax the permissions when packaging.
     Dir.glob([

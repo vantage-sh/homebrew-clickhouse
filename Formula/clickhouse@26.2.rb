@@ -11,6 +11,8 @@ class ClickhouseAT262 < Formula
     regex(/^v?(\d+(?:\.\d+)+[._-](lts|stable))$/i)
   end
 
+  keg_only :versioned_formula
+
   def install
     chmod "+x", "./clickhouse-macos-aarch64"
     system(

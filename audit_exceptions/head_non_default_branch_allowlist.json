@@ -1,24 +1,11 @@
 [
+    "clickhouse@26.8",
     "clickhouse@26.2",
     "clickhouse@26.1",
     "clickhouse@25.12",
     "clickhouse@25.11",
     "clickhouse@25.10",
-    "clickhouse@25.4",
-    "clickhouse@24.12",
-    "clickhouse@24.8",
-    "clickhouse@24.3",
-    "clickhouse@23.3",
-    "clickhouse@23.2",
-    "clickhouse@22.7",
-    "clickhouse@22.6",
-    "clickhouse@22.5",
-    "clickhouse@22.4",
-    "clickhouse@22.3",
-    "clickhouse@22.2",
-    "clickhouse@22.1",
-    "clickhouse@21.12",
-    "clickhouse@21.11",
-    "clickhouse@22.3-altinity-stable",
-    "clickhouse@21.8-altinity-stable"
+    "clickhouse@25.8",
+    "clickhouse@25.6",
+    "clickhouse@25.4"
 ]
