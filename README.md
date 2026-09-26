@@ -8,15 +8,16 @@ clickhouse-client                - alias, same as clickhouse@stable
 clickhouse-server                - alias, same as clickhouse@stable
 
 clickhouse@stable                - alias, always points to the latest stable versioned formula (clickhouse@26.2)
-clickhouse@lts                   - alias, always points to the latest LTS versioned formula (clickhouse@25.8)
+clickhouse@lts                   - alias, always points to the latest LTS versioned formula (clickhouse@26.8)
 clickhouse@altinity-stable       - alias, always points to the latest Altinity-stable versioned formula (clickhouse@22.3-altinity-stable)
 
+clickhouse@26.8                  - keg-only, version: 26.8.12.53-lts (LTS)
 clickhouse@26.2                  - the latest release, version: 26.2.1.1139-stable
 clickhouse@26.1                  - keg-only, version: 26.1.3.52-stable
 clickhouse@25.12                 - keg-only, version: 25.12.7.21-stable
 clickhouse@25.11                 - keg-only, version: 25.11.9.34-stable
 clickhouse@25.10                 - keg-only, version: 25.10.6.36-stable
-clickhouse@25.8                  - keg-only, version: 25.8.8.26-lts (LTS)
+clickhouse@25.8                  - keg-only, version: 25.8.8.26-lts
 clickhouse@25.6                  - keg-only, version: 25.6.8.10-stable
 clickhouse@25.4                  - keg-only, version: 25.4.12.9-stable
 clickhouse@24.12                 - keg-only, version: 24.12.1.1614-stable
