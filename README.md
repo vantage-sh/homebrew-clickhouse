@@ -3,13 +3,15 @@
 ## Available formulae
 
 ```text
-clickhouse                       - alias, same as clickhouse@lts
-clickhouse-client                - alias, same as clickhouse@lts
-clickhouse-server                - alias, same as clickhouse@lts
+clickhouse                       - alias, same as clickhouse@stable
+clickhouse-client                - alias, same as clickhouse@stable
+clickhouse-server                - alias, same as clickhouse@stable
 
+clickhouse@stable                - alias, always points to the latest stable versioned formula (clickhouse@26.6)
 clickhouse@lts                   - alias, always points to the latest LTS versioned formula (clickhouse@26.8)
 
-clickhouse@26.8                  - the latest release / LTS, version: 26.8.12.53-lts
+clickhouse@26.8                  - keg-only, version: 26.8.12.53-lts (LTS)
+clickhouse@26.6                  - the latest stable release, version: 26.6.8.7-stable
 clickhouse@26.2                  - keg-only, version: 26.2.1.1139-stable
 clickhouse@26.1                  - keg-only, version: 26.1.3.52-stable
 clickhouse@25.12                 - keg-only, version: 25.12.7.21-stable

@@ -1,5 +1,6 @@
 [
     "clickhouse@26.8",
+    "clickhouse@26.6",
     "clickhouse@26.2",
     "clickhouse@26.1",
     "clickhouse@25.12",
