@@ -1,17 +1,15 @@
-class ClickhouseAT268 < Formula
+class ClickhouseAT266 < Formula
   desc "Free analytics DBMS for big data with SQL interface"
   homepage "https://clickhouse.com"
-  url "https://github.com/ClickHouse/ClickHouse/releases/download/v26.8.12.53-lts/clickhouse-macos-aarch64",
+  url "https://github.com/ClickHouse/ClickHouse/releases/download/v26.6.8.7-stable/clickhouse-macos-aarch64",
       verified: "github.com/ClickHouse/ClickHouse/"
-  sha256 "e848f9a32c81d1c651a454d674183ed46a0b1aa69e836bde9d4f9952d9a9b01a"
+  sha256 "64bcc71467e41b6a19eb3b8ac340574f0c4602a0fb2857e6997de2414ec3138b"
   license "Apache-2.0"
 
   livecheck do
     url :url
     regex(/^v?(\d+(?:\.\d+)+[._-](lts|stable))$/i)
   end
-
-  keg_only :versioned_formula
 
   def install
     chmod "+x", "./clickhouse-macos-aarch64"
